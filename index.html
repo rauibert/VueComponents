@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Componentes con Vue</title>
+</head>
+<body>
+  <main>
+    <!--
+      <ul>
+        <li v-for="tarea in tareasAjax" v-text="tarea.title"></li>
+      </ul>
+     -->
+    <mis-tareas :tareas="tareasAjax"></mis-tareas>
+
+  </main>
+  <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
