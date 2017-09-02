@@ -1,3 +1,20 @@
+Vue.component('autor',{
+  props: ['nombre'],
+  data: function(){
+    return {nombreAutor: this.nombre }
+  },
+  mounted(){
+    console.log(this.nombre);
+  },
+  template: `<div><h1>{{ nombreAutor }}</h1><button @click="cambiarProp">Cambiar Prop</button></div>`,
+
+  methods: {
+    cambiarProp() {
+      this.nombreAutor = this.nombreAutor.toUpperCase();
+    }
+  }
+});
+
 Vue.component('elegir-ganador',{
     props: ['listado'],
     template: '#elegir-ganador-template',
@@ -31,7 +48,9 @@ new Vue({
   },
   data: {
     tareasAjax:[],
-    personas: ['Juan', 'Alicia', 'Pedro', 'Javier', 'Marcos']
+    personas: ['Juan', 'Alicia', 'Pedro', 'Javier', 'Marcos'],
+    autor: 'Raul',
+    nombreAutor:''
 
   }
 });
