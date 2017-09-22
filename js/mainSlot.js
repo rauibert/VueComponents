@@ -13,6 +13,7 @@ Vue.component('alerta', {
         <slot name="header">
           Hola
         </slot>
+        <a href="#" @click="ocultarComp">Cerrar</a>
       </header>
       <div class="alerta__contenido">
         <slot>
@@ -25,6 +26,11 @@ Vue.component('alerta', {
         </slot>
       </footer>
     </section>`,
+    methods: {
+      ocultarComp(){
+        this.$emit('ocultar');
+      }
+    }
 });
 
 new Vue({
@@ -36,6 +42,7 @@ new Vue({
       {titulo: 'Ir al gym'},
       {titulo: 'Comprar el periodico'},
       {titulo: 'Desayunar'}
-    ]
+    ],
+    mostrarExito: false
   }
 });

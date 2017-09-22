@@ -12,13 +12,16 @@
 <body>
 
 <main>
+
+    <button @click="mostrarExito = 'true'">Exito</button>
+
     <mis-tareas :listado="tareas">
       <template scope="datos">
         <li>{{ datos.titulo }}</li>
       </template>
     </mis-tareas>
 
-    <alerta tipo="alerta--exito" posicion="alerta--abajo-derecha">
+    <alerta @ocultar="mostrarExito= false" v-show="mostrarExito" tipo="alerta--exito" posicion="alerta--arriba-derecha">
       <template slot="header">SLOTS</template>
       <template>Este es el nuevo contenido del alerta</template>
       <template slot="footer">Ahi lo llevas </template>
