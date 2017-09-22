@@ -10,8 +10,12 @@
 </head>
 
 <body>
-  
+
 <main>
+  <lista-tareas :tareas="tareas">
+    Tareas que quiero finalizar
+  </lista-tareas>
+  <hr>
   <listado-productos :productos="productos"></listado-productos>
   <carrito-compra></carrito-compra>
   <pre>{{ $data }}</pre>

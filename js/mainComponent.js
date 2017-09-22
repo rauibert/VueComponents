@@ -1,3 +1,25 @@
+/* Componentes dentro de otros componentes */
+Vue.component('lista-tareas', {
+  props: ['tareas'],
+  template: `
+    <div>
+      <h1><slot></slot></h1>
+      <ul>
+        <tarea v-for="tarea in tareas" :tarea="tarea"></tarea>
+      </ul>
+    </div>`
+});
+
+Vue.component('tarea', {
+  props: ['tarea'],
+  template: `
+    <li>{{ tarea }}</li>
+    `
+});
+
+
+/* Comunicación entre componentes*/
+
 const puenteEventos = new Vue(); //Nos sirve para comunicarnos entre componentes
 
 Vue.component('listado-productos', {
@@ -64,6 +86,13 @@ new Vue({
       {nombre: 'Libro 3', precio: 3},
       {nombre: 'Libro 4', precio: 90},
       {nombre: 'Libro 5', precio: 19},
+    ],
+
+    tareas:[
+      'Finalizar curso de Vue js',
+      'Seguir proyectos Laravel',
+      'Aplicación con Phonegap',
+      'Aplicación con Electron js'
     ]
   }
 });
