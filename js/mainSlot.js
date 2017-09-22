@@ -1,3 +1,8 @@
+Vue.component('mis-tareas', {
+  props: ['listado'],
+  template: '#mis-tareas-template'
+});
+
 // El slot crea un contenido por defecto
 
 Vue.component('alerta', {
@@ -24,4 +29,13 @@ Vue.component('alerta', {
 
 new Vue({
   el: 'main',
+  data: {
+    tareas: [
+      {titulo: 'Salir a correr'},
+      {titulo: 'Recoger la casa'},
+      {titulo: 'Ir al gym'},
+      {titulo: 'Comprar el periodico'},
+      {titulo: 'Desayunar'}
+    ]
+  }
 });

@@ -12,14 +12,25 @@
 <body>
 
 <main>
-    <alerta tipo="alerta--exito" posicion="alerta--arriba-derecha">
-      <template slot="header">Todo guay</template>
+    <mis-tareas :listado="tareas">
+      <template scope="datos">
+        <li>{{ datos.titulo }}</li>
+      </template>
+    </mis-tareas>
+
+    <alerta tipo="alerta--exito" posicion="alerta--abajo-derecha">
+      <template slot="header">SLOTS</template>
       <template>Este es el nuevo contenido del alerta</template>
-      <template slot="footer">Ahi lo llevas</template>
+      <template slot="footer">Ahi lo llevas </template>
     </alerta>
     <pre>{{ $data }}</pre>
 </main>
 
+<template id="mis-tareas-template">
+  <ul>
+    <slot v-for="tarea in listado" :titulo="tarea.titulo"></slot>
+  </ul>
+</template>
 
 <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
